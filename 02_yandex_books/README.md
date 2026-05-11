@@ -35,4 +35,4 @@
 ## Ссылки
 
 - [Аналитическая записка](https://gaskarovaaida.github.io/Portfolio/02_yandex_books/yandex_books_report.html)
-- [Jupyter Notebook](./yandex_books.ipynb)
+- [Jupyter Notebook](https://nbviewer.org/github/GaskarovaAida/Portfolio/blob/main/02_yandex_books/yandex_books.ipynb)
