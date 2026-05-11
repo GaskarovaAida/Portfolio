@@ -31,6 +31,6 @@ SQL-анализ объявлений о продаже квартир на ры
 
 ## Ссылки
 
-- [Дашборд в DataLens](https://datalens.ru/ewztpv2gn7ds0-dashbord-dlya-agentstva-nedvizhimosti?tab=aW&state=694eb5f2223)
+- [Дашборд в DataLens](https://datalens.ru/ewztpv2gn7ds0-dashbord-dlya-agentstva-nedvizhimosti)
 - [SQL-скрипт](./spb_realty_analysis.sql)
-- [Аналитическая записка](./Аналитическая_записка_Недвижимость_СПб.docx)
+- [Аналитическая записка](./analytics_report.html)
