@@ -233,3 +233,4 @@ FROM release_1 AS rl_1 JOIN sell_1 AS sl_1 ON rl_1.city_L = sl_1.city_L -- со�
 WHERE count_id_rl_L >=50 -- отсекаем выбросы по малому количеству объявлений в населенном пункте
 ORDER BY avg_sell_days_exposition   --  результат запроса отсортирован по среднему кол-ву дней, в течение которых квартира продавалась
 LIMIT 15;
+
