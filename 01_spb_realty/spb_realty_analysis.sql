@@ -70,9 +70,9 @@ PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY parks_around3000) AS медианн�
 PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY ponds_around3000) AS медианное_число_водоемов_рад3_км
 FROM groop_of_2
 GROUP BY  Регион, Сегмент_Активности, Кол_во_объявлений, Кол_во_объявлений_по_регионам
-ORDER BY Регион DESC, Сегмент_Активности
+ORDER BY Регион DESC, Сегмент_Активности;
 
---Задача 2. Время активности объявлений
+-- Задача 2. Сезонность объявлений
 WITH limits AS (
     SELECT  
         PERCENTILE_DISC(0.99) WITHIN GROUP (ORDER BY total_area) AS total_area_limit,
@@ -233,4 +233,3 @@ FROM release_1 AS rl_1 JOIN sell_1 AS sl_1 ON rl_1.city_L = sl_1.city_L -- со�
 WHERE count_id_rl_L >=50 -- отсекаем выбросы по малому количеству объявлений в населенном пункте
 ORDER BY avg_sell_days_exposition   --  результат запроса отсортирован по среднему кол-ву дней, в течение которых квартира продавалась
 LIMIT 15;
-
