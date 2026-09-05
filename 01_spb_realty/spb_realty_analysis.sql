@@ -1,3 +1,4 @@
+
 --Задача 1. Время активности объявлений
 -- Определим аномальные значения (выбросы) по значению перцентилей:
 WITH limits AS (
@@ -58,7 +59,7 @@ groop_of_2 AS(
 --Итоговая таблица
 SELECT Регион, Сегмент_Активности,
 Кол_во_объявлений,
-100*Кол_во_объявлений/Кол_во_объявлений_по_регионам AS Доля_объявлений,--Доля объявлений от суммы по регионам
+ROUND(100.0 * Кол_во_объявлений / Кол_во_объявлений_по_регионам, 2) AS Доля_объявлений,--Доля объявлений от суммы по регионам
 ROUND(AVG(metr_cost::numeric), 2) AS средняя_стоимость_м2,
 ROUND(AVG(living_area::numeric), 2) AS средняя_жил_площ,
 PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY rooms) AS медиана_кол_ва_комнат,
@@ -66,7 +67,7 @@ ROUND(AVG(ceiling_height::numeric), 2) AS средняя_высота_потол
 PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY balcony) AS медиана_кол_ва_балконов,
 ROUND(AVG(kitchen_area::numeric), 2) AS средняя_площ_кухни,
 PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY floors_total) AS медиана_этажности,
-PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY parks_around3000) AS медианное_число_парков_рад300_м,
+PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY parks_around3000) AS медианное_число_парков_рад3_км,
 PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY ponds_around3000) AS медианное_число_водоемов_рад3_км
 FROM groop_of_2
 GROUP BY  Регион, Сегмент_Активности, Кол_во_объявлений, Кол_во_объявлений_по_регионам
